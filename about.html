@@ -3,13 +3,12 @@
 
 <head>
   <meta charset="utf-8">
+  <title>Intro to Frontend Development</title>
   <link rel="stylesheet" type="txt/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="shortcut icon" type="image/ico" href="img/favicon.ico">
-  <link rel="stylesheet" type="txt/css" href="css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <title>About me</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -18,18 +17,18 @@
       <img src="img/logo-w.svg" width="50px" alt="wojtek's logo, click to home">
     </a>
     <nav>
-      <ul role="menubar">
+      <ul class="navigation-list" role="menubar">
         <li role="presentation">
-          <a href="#" role="menuitem">Home</a>
+          <a class="navigation-list_item" href="index.html" role="menuitem">Home</a>
         </li>
         <li role="presentation">
-          <a href="about.html" role="menuitem">About</a>
+          <a class="navigation-list_item navigation-list_item--active"href="about.html" role="menuitem">About</a>
         </li>
         <li role="presentation">
-          <a href="#">Work</a>
+          <a class="navigation-list_item"href="#">Work</a>
         </li>
         <li role="presentation">
-          <a href="contact.html" role="menuitem">Contact</a>
+          <a class="navigation-list_item"href="contact.html" role="menuitem">Contact</a>
         </li>
       </ul>
     </nav>
