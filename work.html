@@ -19,37 +19,63 @@
     <nav class="page-header_item">
       <ul class="navigation-list" role="menubar">
         <li role="presentation">
-          <a class="navigation-list_item" href="#" role="menuitem">Home</a>
+          <a class="navigation-list_item" href="index.html" role="menuitem">Home</a>
         </li>
         <li role="presentation">
           <a class="navigation-list_item" href="about.html" role="menuitem">About</a>
         </li>
         <li role="presentation">
-          <a class="navigation-list_item" href="work.html">Work</a>
+          <a class="navigation-list_item navigation-list_item--active" href="work.html">Work</a>
         </li>
         <li role="presentation">
-          <a class="navigation-list_item  navigation-list_item--active" href="contact.html" role="menuitem">Contact</a>
+          <a class="navigation-list_item" href="contact.html" role="menuitem">Contact</a>
         </li>
       </ul>
     </nav>
   </header>
   <main>
-    <a href="mailto:lukowski.ux@gmail.com?subject=A%20message%20from%20the%20portfolio%20site">lukowski.ux@gmail.com</a><br>
-    <a href="tel:+4916000000000">Call me</a><br>
-    <a href="skype:wojtek_lukowski@yahoo.com">Skype</a><br>
 
-    <form action="contact.html" method="post" id="contact-form">
-      <label class="standard-label" for="contact-email">Email: </label>
-      <input type="email" id="contact-email" required>
+    <section>
 
-      <label class="standard-label" for="contact-tel">Telephone: </label>
-      <input type="tel" id="contact-tel" pattern="\d{1}[\-]\d{3}[\-]\d{5}">
+      <h1>My Work:</h1>
+      <div class="grid">
+        <div class="grid_item">
+          <h2>Project name</h2>
+          <p>Project description</p>
+          <a href="#">See on GitHub</a>
+        </div>
+        <div class="grid_item">
+          <h2>Project name</h2>
+          <h2>Project name</h2>
+          <h2>Project name</h2>
+          <p>Project description</p>
+          <a href="#">See on GitHub</a>
+        </div>
+        <div class="grid_item">
+          <h2>Project name</h2>
+          <p>Project description</p>
+          <a href="#">See on GitHub</a>
+        </div>
+        <div class="grid_item">
+          <h2>Project name</h2>
+          <p>Project description</p>
+          <a href="#">See on GitHub</a>
+        </div>
+        <div class="grid_item">
+          <h2>Project name</h2>
+          <p>Project description</p>
+          <a href="#">See on GitHub</a>
+        </div>
+        <div class="grid_item">
+          <h2>Project name</h2>
+          <p>Project description</p>
+          <a href="#">See on GitHub</a>
+        </div>
 
-      <label class="standard-label" for="contact-message">Mesage: </label>
-      <textarea maxlength="240" id="contact-message" required></textarea>
+      </div> <!-- end of grid -->
+    </section>
 
-      <input type="submit" value="Send">
-    </form>
+
 
   </main>
   <footer class="page-footer">
