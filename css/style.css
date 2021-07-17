@@ -84,22 +84,17 @@ h3 {
   font-weight: 600;
 }
 
-a {
-
+a, a:visited {
   font-weight: 500;
   color: #CDD7F5;
-}
-
-a:visited {
-  color: #CDD7F5;
   text-decoration: none;
+  transition-duration: .5s;
+  transition-property: color;
 }
 
 a:hover, a:focus {
   color: #6CE4FE;
   text-decoration: underline;
-  transition-duration: 0.2s;
-  transition-property: color;
 }
 
 a:active {
@@ -107,36 +102,47 @@ a:active {
 }
 
 button,
-button:visited {
+button:visited,
+.button,
+.button:visited {
+  display: inline-block;
   font-family: 'Manrope', sans-serif;
   font-size: 16px;
   font-weight: 600;
   min-width: 150px;
   text-align: center;
   color: #6CE4FE;
-  background-color: #0B192E;
+  text-decoration: none;
+  background-color: transparent;
   padding: 10px;
   border-radius: 3px;
   border: 1px solid #6CE4FE;
-  transition-duration: 0.2s;
-  transition-property: opacity;
+  transition: .5s opacity;
 }
 
 button:hover,
 button:focus,
-button.active {
-  background-color: #121F31;
+button.active,
+.button:hover,
+.button:focus,
+.button.active {
   opacity: 80%;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .secondary_button {
   color: #CDD7F5;
   border: 1px solid #CDD7F5;
+  display: inline-block;
 }
 
 a.navigation-list_item {
   text-decoration: none;
+}
+
+a.navigation-list_item:hover {
+  text-decoration: underline;
 }
 
 .navigation-list_item--active {
@@ -151,6 +157,7 @@ a.navigation-list_item--active {
 a.navigation-list_item--active:hover {
   color: #CDD7F5;
   opacity: 80%;
+  text-decoration: none;
 }
 
 input, textarea {
@@ -197,7 +204,15 @@ input, textarea.active {
 }
 
 .header-logo {
-  width: 50px;
+  max-width: 50px;
+  transition-property: transform;
+  transition-property: opacity;
+}
+
+.header-logo:hover {
+  opacity: 80%;
+  transform: rotate(2deg);
+  transition-duration: 0.2s;
 }
 
 .profile {
@@ -236,24 +251,162 @@ input, textarea.active {
   width: 33%;
 }
 
+.centered {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@keyframes color-change {
+  0% {
+    fill: #1BD0F8;
+  }
+
+  25% {
+    fill: #06195F;
+  }
+
+  50% {
+    fill: #37065F;
+  }
+
+  75% {
+    fill: #0DBC34;
+  }
+
+  100% {
+    fill: #EDD70D;
+  }
+}
+
+.cloud {
+  animation-duration: 10s;
+  animation-name: color-change;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes observe {
+  from {
+    transform: translate(0 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-600px, 0);
+  }
+}
+
+.peryskop {
+  animation-duration: 30s;
+  animation-name: observe;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes sunrise {
+  from {
+    transform: translate(0 0);
+  }
+
+  to {
+    transform: translate(0, -275px);
+  }
+}
+
+.sun {
+  animation-duration: 25s;
+  animation-name: sunrise;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes water-change {
+  from {
+    fill: #383DBB;
+  }
+
+  to {
+    fill: #166658;
+  }
+}
+
+.water {
+  animation-duration: 20s;
+  animation-name: water-change;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes entry {
+  0% {
+    left: 100%;
+  }
+
+  70% {
+    left: -10%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+#welcome {
+  animation-name: entry;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
 @supports (display: grid) {
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .grid_item {
+    background-color: #233043;
+    width: auto;
+    min-height: auto;
+    margin: 0;
+  }
+
+  .grid_item:last-child {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
 }
 
-.grid_item {
-background-color: #233043;
-width: auto;
-min-height: auto;
-margin: 0;
+@media all and (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+  }
+
+  .grid_item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
 }
 
-.grid_item:last-child {
-  grid-column-start: 3;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
 }
