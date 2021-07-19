@@ -4,6 +4,20 @@ font: #CDD7F5;
 blue: #6CE4FE;
 green: #64ffda;
 */
+
+:root {
+  --background-color: #0B192E;
+  --light-grey: #CDD7F5;
+  --dark-grey: #8993AF;
+  --neon-blue: #6CE4FE;
+  --button-hover: #233043;
+  --grid-item: #081220;
+  --font: 'Manrope';
+  --font-button: 'IBM Plex Mono';
+}
+
+
+
 /* css reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -61,12 +75,12 @@ table {
 /* end of css reset */
 
 body {
-  background-color: #0B192E;
-  font-family: Manrope, sans-serif;
+  background-color: var(--background-color);
+  font-family: var(--font), sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.6;
-  color: #CDD7F5;
+  color: var(--dark-grey);
 }
 
 h1 {
@@ -84,15 +98,18 @@ h3 {
   font-weight: 600;
 }
 
+.light-grey {
+  color: var(--light-grey);
+}
+
 a, a:visited {
-  font-weight: 500;
-  color: #CDD7F5;
+  color: var(--light-grey);
   text-decoration: none;
   transition: color .2s, text-decoration .2s;
 }
 
 a:hover, a:focus, a:active {
-  color: #6CE4FE;
+  color: var(--neon-blue);
   text-decoration: underline;
 }
 
@@ -101,16 +118,16 @@ button:visited,
 .button,
 .button:visited {
   display: inline-block;
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: var(--font-button), sans-serif;
   font-size: 16px;
   min-width: 150px;
   text-align: center;
-  color: #6CE4FE;
+  color: var(--neon-blue);
   text-decoration: none;
   background-color: transparent;
   padding: 10px;
   border-radius: 3px;
-  border: 1px solid #6CE4FE;
+  border: 1px solid var(--neon-blue);
   transition: background-color .2s;
 }
 
@@ -120,16 +137,17 @@ button.active,
 .button:hover,
 .button:focus,
 .button.active {
-  background-color: #233043;
+  background-color: var(--button-hover);
   text-decoration: none;
   cursor: pointer;
 }
 
 .secondary_button {
-  color: #CDD7F5;
-  border: 1px solid #CDD7F5;
+  color: var(--light-grey);
+  border: 1px solid var(--light-grey);
   display: inline-block;
 }
+
 nav {
   font-family: 'IBM Plex Mono', sans-serif;
 }
@@ -152,7 +170,7 @@ a.navigation-list_item--active {
 }
 
 a.navigation-list_item--active:hover {
-  color: #CDD7F5;
+  color: var(--neon-blue);
   opacity: 80%;
   text-decoration: none;
 }
@@ -163,20 +181,18 @@ input, textarea {
   font-weight: 600;
   min-width: 150px;
   text-align: center;
-  color: #6CE4FE;
+  color: var(--light-grey);
   background-color: #0B192E;
   padding: 10px;
   border-radius: 3px;
-  border: 1px solid #6CE4FE;
-  transition-duration: 0.2s;
-  transition-property: opacity;
+  border: 1px solid var(--light-grey);
+  transition: color, 0.2s;
 }
 
 input, textarea:hover,
 input, textarea:focus,
 input, textarea.active {
-  background-color: #121F31;
-  opacity: 80%;
+  background-color: var(--button-hover);
   text-decoration: none;
 }
 
@@ -369,7 +385,7 @@ input, textarea.active {
   }
 
   .grid_item {
-    background-color: #081220;
+    background-color: var(--grid-item);
     width: auto;
     min-height: auto;
     margin: 0;
