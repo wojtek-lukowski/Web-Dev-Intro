@@ -58,8 +58,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 /* end of css reset */
+
 body {
   background-color: #0B192E;
   font-family: Manrope, sans-serif;
@@ -88,17 +88,12 @@ a, a:visited {
   font-weight: 500;
   color: #CDD7F5;
   text-decoration: none;
-  transition-duration: .5s;
-  transition-property: color;
+  transition: color .2s, text-decoration .2s;
 }
 
-a:hover, a:focus {
+a:hover, a:focus, a:active {
   color: #6CE4FE;
   text-decoration: underline;
-}
-
-a:active {
-  opacity: 80%;
 }
 
 button,
@@ -106,9 +101,8 @@ button:visited,
 .button,
 .button:visited {
   display: inline-block;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'IBM Plex Mono', sans-serif;
   font-size: 16px;
-  font-weight: 600;
   min-width: 150px;
   text-align: center;
   color: #6CE4FE;
@@ -117,7 +111,7 @@ button:visited,
   padding: 10px;
   border-radius: 3px;
   border: 1px solid #6CE4FE;
-  transition: .5s opacity;
+  transition: background-color .2s;
 }
 
 button:hover,
@@ -126,7 +120,7 @@ button.active,
 .button:hover,
 .button:focus,
 .button.active {
-  opacity: 80%;
+  background-color: #233043;
   text-decoration: none;
   cursor: pointer;
 }
@@ -135,6 +129,9 @@ button.active,
   color: #CDD7F5;
   border: 1px solid #CDD7F5;
   display: inline-block;
+}
+nav {
+  font-family: 'IBM Plex Mono', sans-serif;
 }
 
 a.navigation-list_item {
@@ -205,13 +202,11 @@ input, textarea.active {
 
 .header-logo {
   max-width: 50px;
-  transition-property: transform;
-  transition-property: opacity;
+  transition: transform .2s;
 }
 
 .header-logo:hover {
-  opacity: 80%;
-  transform: rotate(2deg);
+  transform: rotate(5deg);
   transition-duration: 0.2s;
 }
 
@@ -244,11 +239,6 @@ input, textarea.active {
 .navigation-list li {
   display: inline-block;
   margin-left: 15px;
-}
-
-.grid_item {
-  display: inline-block;
-  width: 33%;
 }
 
 .centered {
@@ -366,6 +356,11 @@ input, textarea.active {
   position: relative;
 }
 
+.grid_item {
+  display: inline-block;
+  width: 33%;
+}
+
 @supports (display: grid) {
   .grid {
     display: grid;
@@ -374,7 +369,7 @@ input, textarea.active {
   }
 
   .grid_item {
-    background-color: #233043;
+    background-color: #081220;
     width: auto;
     min-height: auto;
     margin: 0;
